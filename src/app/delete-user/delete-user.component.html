@@ -3,6 +3,25 @@
 </head>
 
 <body>
+    <table class="table table-striped">
+        <thead>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Estado Civil</th>
+            <th>Dni</th>
+            <th>Lugar De Nacimiento</th>
+            <th></th>
+        </thead>
+        <tr *ngFor="let usuario of usuarios">
+            <td>{{usuario.nombre}}</td>
+            <td>{{usuario.edad}}</td>
 
-    DELETEANDO
+            <td>{{usuario.estadoCivil}}</td>
+            <td>{{usuario.dni}}</td>
+            <td>{{usuario.lugarNacimiento}}</td>
+            <td><button (click)='DeleteUser(usuario)'>Borrar</button></td>
+
+
+        </tr>
+    </table>
 </body>
