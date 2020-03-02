@@ -1,0 +1,24 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="form-group">
+        <label for="">Nombre</label>
+        <input type="text" class="form-control" name="" id="" [(ngModel)]='user.nombre'>
+        <label for="edad">Edad</label>
+        <input type="text" class="form-control" name="edad" id="" [(ngModel)]='user.edad'>
+        <label for="estado">Estado Civil</label>
+        <input type="text" class="form-control" name="estado" id="" [(ngModel)]='user.estadoCivil'>
+        <label for="lugar">Lugar Nacimiento</label>
+        <input type="text" class="form-control" name="estado" id="" [(ngModel)]='user.lugarNacimiento'>
+        <label for="dni">Dni</label>
+        <input type="text" class="form-control" name="dni" id="" [(ngModel)]='user.dni'>
+
+    </div>
+
+    <button (click)='ngAddUser()'>Añadir</button>
+
+
+</body>
