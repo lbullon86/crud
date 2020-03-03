@@ -1,55 +1,68 @@
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 <body>
-    <div *ngIf="bool">
+    <div class="container">
 
-        <h2>Datos a modificar</h2>
-        <table class="table">
-            <thead class="thead-dark">
-                <th>Nombre</th>
-                <th>Edad</th>
-                <th>Estado Civil</th>
-                <th>Dni</th>
-                <th>Lugar De Nacimiento</th>
-                <th></th>
-            </thead>
-            <tr>
-                <td><input type="text" [(ngModel)]='user.nombre'></td>
-                <td><input type="text" [(ngModel)]="user.edad"></td>
-                <td><input type="text " [(ngModel)]="user.estadoCivil"></td>
-                <td><input type="text" [(ngModel)]="user.dni"></td>
-                <td><input type="text " [(ngModel)]="user.lugarNacimiento"></td>
-                <td><button (click)="UpdateUser()">Modificar</button></td>
-            </tr>
+        <div class="row">
 
-        </table>
+            <div class="col-6">
+                <div *ngIf="bool">
+                    <h2>Datos a modificar</h2>
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <th>Nombre</th>
+                            <th>Edad</th>
+                            <th>Estado Civil</th>
+                            <th>Dni</th>
+                            <th>Lugar De Nacimiento</th>
+                            <th></th>
+                        </thead>
+                        <tr>
+                            <td><input type="text" [(ngModel)]='user.nombre'></td>
+                            <td><input type="text" [(ngModel)]="user.edad"></td>
+                            <td><input type="text " [(ngModel)]="user.estadoCivil"></td>
+                            <td><input type="text" [(ngModel)]="user.dni"></td>
+                            <td><input type="text " [(ngModel)]="user.lugarNacimiento"></td>
+                            <td><button (click)="UpdateUser()">Modificar</button></td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-12">
+
+
+                <table class="table table-striped">
+                    <thead>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Estado Civil</th>
+                        <th>Dni</th>
+                        <th>Lugar De Nacimiento</th>
+                        
+                    </thead>
+                    <tr *ngFor="let usuario of usuarios">
+
+                        <td>{{usuario.nombre}}</td>
+                        <td>{{usuario.edad}}</td>
+                        <td>{{usuario.estadoCivil}}</td>
+                        <td>{{usuario.dni}}</td>
+                        <td>{{usuario.lugarNacimiento}}</td>
+                        <td><button (click)="updatear(usuario)">Modificar</button></td>
+
+                    </tr>
+
+
+
+
+
+
+                </table>
+            </div>
+        </div>
     </div>
-    <table class="table table-striped">
-        <thead>
-            <th>Nombre</th>
-            <th>Edad</th>
-            <th>Estado Civil</th>
-            <th>Dni</th>
-            <th>Lugar De Nacimiento</th>
-            <th></th>
-        </thead>
-        <tr *ngFor="let usuario of usuarios">
-
-            <td>{{usuario.nombre}}</td>
-            <td>{{usuario.edad}}</td>
-            <td>{{usuario.estadoCivil}}</td>
-            <td>{{usuario.dni}}</td>
-            <td>{{usuario.lugarNacimiento}}</td>
-            <td><button (click)="updatear(usuario)">Modificar</button></td>
-
-        </tr>
-
-
-
-
-
-
-    </table>
 </body>

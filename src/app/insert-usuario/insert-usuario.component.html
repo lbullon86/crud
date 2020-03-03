@@ -6,19 +6,21 @@
     <div class="container">
 
         <div class="row">
+            <form  #loginForm="ngForm">
 
-            <div class="form-group col-6 offset-3">
+            <div class="form-group col-12 offset-3">
                 <div class="row">
-
                     <div class="col-6">
                         <label for="">Nombre</label>
-                        <input type="text" class="form-control" #nombre='ngModel' name="nombre" id="" [(ngModel)]='user.nombre' required>
+                        <input type="text" class="form-control" #nombre='ngModel' name="nombre" id="" [(ngModel)]='user.nombre' required placeholder="Introduzca Nombre">
                         <span *ngIf="nombre.touched &&  !nombre.valid" [ngStyle]="{'background-color': 'red'}">Debes rellenar el nombre</span>
                     </div>
 
                     <div class="col-6">
                         <label for="edad">Edad</label>
-                        <input type="text" class="form-control" name="edad" id="" [(ngModel)]='user.edad'>
+                        <input type="number" class="form-control" #edad= 'ngModel' name="edad" id="" [(ngModel)]='user.edad' pattern ="^([0-9]|[1-9][0-9]|99)$" required placeholder="Introduzca la edad">
+                        <span *ngIf="edad.touched &&  !edad.valid" [ngStyle]="{'background-color': 'red'}">El número debe estar relleno y ser inferior a 100</span>
+
                     </div>
 
                 </div>
@@ -26,24 +28,36 @@
 
                     <div class="col-6">
                         <label for="estado">Estado Civil</label>
-                        <input type="text" class="form-control" name="estado" id="" [(ngModel)]='user.estadoCivil'>
+                        <div class="form-group">
+                          
+                          <select class="form-control"  name="estado" [(ngModel)]='user.estadoCivil'>
+                            <option value="Soltero">Soltero</option>
+                            <option value="Casado">Casado</option>
+                            <option value="Viudo" >Viudo</option>
+                          </select>
+                        </div>
+                    
+
                     </div>
                     <div class="col-6">
 
                         <label for="lugar">Lugar Nacimiento</label>
-                        <input type="text" class="form-control" name="estado" id="" [(ngModel)]='user.lugarNacimiento'>
+                        <input type="text" class="form-control" name="estado" #lugar='ngModel' id="" [(ngModel)]='user.lugarNacimiento' required placeholder="Ciudad de nacimiento">
+                        <span *ngIf="lugar.touched &&  !lugar.valid" [ngStyle]="{'background-color': 'red'}">El lugar debe estar relleno</span>
+
                     </div>
                 </div>
                 <div class="row">
 
                     <div class="col-6">
                         <label for="dni">Dni</label>
-                        <input type="text" class="form-control" name="dni" id="" [(ngModel)]='user.dni'>
+                        <input type="text" class="form-control" #dni='ngModel' name="dni" id="" [(ngModel)]='user.dni' required placeholder="Dni 77777777W" pattern=" (([X-Z]{1})([-]?)(\d{7})([-]?)([A-Z]{1}))|((\d{8})([-]?)([A-Z]{1}))">
+                        <span *ngIf="dni.touched &&  !dni.valid" [ngStyle]="{'background-color': 'red'}">El Dni debe estar relleno y debe ser 8 números y letra</span>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6 offset-3 m-4">
-                        <button (click)='ngAddUser()'>Añadir</button>
+                    <div class="col-6 offset-6 m-4">
+                        <input type="submit" (click)='ngAddUser()' [disabled]="loginForm.form.invalid" value="Añadir">
 
                     </div>
                 </div>
@@ -51,10 +65,7 @@
             </div>
 
 
-            <tr *ngFor="let usuario of usuarios">
-                <td>{{usuario.nombre}}</td>
-
-            </tr>
+            </form>
         </div>
 
     </div>

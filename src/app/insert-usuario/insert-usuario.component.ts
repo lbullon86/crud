@@ -20,7 +20,8 @@ export class InsertUsuarioComponent implements OnInit {
   constructor(
     public _userService:UserService,
 
-  ) {this.user= new Usuario()}
+  ) {this.user= new Usuario()
+  this.user.estadoCivil='Soltero'}
 
   ngOnInit() {
     
