@@ -6,12 +6,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 This project needs install json-serve
 
-npm install json-serve
+`npm install json-serve `
 
 
 ## Development server
 
 Run `ng start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+If you have a problem with `ng start`, maybe you need  `npm install --save-dev @angular-devkit/build-angular`
 
 
 ## Further help
