@@ -1,0 +1,28 @@
+{
+  "clientes": [
+    {
+      "nombre": "Luis",
+      "edad": "34",
+      "estadoCivil": "soltera",
+      "dni": "77878",
+      "lugarNacimiento": "Soltera",
+      "id": 3
+    },
+    {
+      "nombre": "Maite",
+      "edad": "18",
+      "estadoCivil": "Soltera",
+      "lugarNacimiento": "Menorca",
+      "dni": "1234549",
+      "id": 4
+    },
+    {
+      "nombre": "Jordan",
+      "edad": "34",
+      "estadoCivil": "Soltero",
+      "lugarNacimiento": "Chicago",
+      "dni": "Bulls",
+      "id": 5
+    }
+  ]
+}
